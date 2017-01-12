@@ -42,6 +42,7 @@ Once the entity/property and property/property relationships are applied, there 
 * Dependency: 
   * if A then B / if A then not B
   * if A then (pattern), e.g. if A then (B or C), if A then (B and (C or D)), etc.
+  * value of A / relationship / value of B (greater than, less than, equal to)
 * Choice
   * one of (list), not one of (list)
 * Compound
