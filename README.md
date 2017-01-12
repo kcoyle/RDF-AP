@@ -11,6 +11,8 @@ For the purpose of navigation of the graph, it may be useful to define a primary
 * Main entity (0 or 1)
 * Secondary entities (0 or unlimited)
 
+Entities can be identified using RDF types (classes) or through specific properties.
+
 [Note: assume that cardinality can be used throughout, even if not expressly listed.]
 
 ## Properties
