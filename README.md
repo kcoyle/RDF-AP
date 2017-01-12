@@ -50,10 +50,10 @@ Once the entity/property and property/property relationships are applied, there 
 There will be many tests that can be done on property values, including ones with dependencies and choices. Some are enumerated here.
 
 | Property value | must/must not|
-| -- | -- |
+| -------------- | ------------ |
 | value type |  |
 | value list (choice) |  |
-| value pattern (rege) |  |
+| value pattern (regex) |  |
 
 
 
