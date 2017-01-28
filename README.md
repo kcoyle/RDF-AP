@@ -2,7 +2,7 @@
 
 This proposes a modification to the Description Set Profile to include design patterns used for validation.
 
-There are two main components of the application profile: entities, and properties. There are three primary types of relationships between these: entity/entity relationships, property/property relationships, and entity/property relationships. The relationships can be of type dependency, choice, or compound.
+There are three main components of the application profile: entities, properties, and values. There are five primary types of relationships between these: entity/entity relationships, property/property relationships, and entity/property relationships, property/value relationships, and value/value relationships. The relationships can be of type dependency, choice, or compound.
 
 ## Primary and Secondary Entities
 
@@ -48,7 +48,7 @@ Once the entity/property and property/property relationships are applied, there 
 * Compound
   * A and B must both be present
 
-## Property values
+## Property/value relationships
 
 There will be many tests that can be done on property values, including ones with dependencies and choices. Some are enumerated here.
 
@@ -58,7 +58,10 @@ There will be many tests that can be done on property values, including ones wit
 | value list (choice) |  |
 | value pattern (regex) |  |
 
+## Value/value relationships
 
+* greater than/less than
+  * birth date must be less than death date
 
 ## Open/Closed
 
