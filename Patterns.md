@@ -1,4 +1,21 @@
+# Patterns
 
+There are three main components of the application profile: entities, properties, and values. There are five primary types of relationships between these: entity/entity relationships, property/property relationships, and entity/property relationships, property/value relationships, and value/value relationships. The relationships can be of type dependency, choice, or compound.
+
+## Primary and Secondary Entities
+
+For the purpose of navigation of the graph, it may be useful to define a primary entity. This entity is the starting point for subsequent operations. The identifier of the entity may be considered the identifier for the *record*. All other entities are secondary.
+
+* Main entity (0 or 1)
+* Secondary entities (0 or unlimited)
+
+Entities can be identified using RDF types (classes) or through specific properties.
+
+[Note: assume that cardinality can be used throughout, even if not expressly listed.]
+
+## Properties
+
+Once the entity/property and property/property relationships are applied, there can be rules that apply to the properties and their values:
 * property cardinality (if not already defined in relationship patterns)
 * property value rules
 
