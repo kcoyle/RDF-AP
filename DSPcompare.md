@@ -5,8 +5,9 @@
 | Function | DC-DSP | ShEx | SHACL | Comment |
 | ---------| ------ | ---- | ----- | ------- |
 | Start node | no | no  | yes: target | ShEx assumes target set prior to validation  |
-| min/max count (class) | | | | |
-| min/max count (property) | | | | |
+| min/max count (class) | yes | | | |
+| min/max count (property) | yes | | | |
+| node kind |  |  | IRI, bnode, literal | SHACL includes combinations, e.g. IRIOrLiteral |
 
 
 
