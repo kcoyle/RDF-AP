@@ -1,4 +1,18 @@
 # Comparison of DC-DSP with ShEx and SHACL
 
-| DC-DSP | ShEx | SHACL |
-| ------ | ---- | ----- |
+## General Functionality
+
+| Function | DC-DSP | ShEx | SHACL | Comment |
+| ---------| ------ | ---- | ----- | ------- |
+| Start node | no | no  | yes: target | ShEx assumes target set prior to validation  |
+| min/max count (class) | | | | |
+| min/max count (property) | | | | |
+
+
+
+## Specifics
+
+| DC-DSP | ShEx | SHACL | Comment |
+| ------ | ---- | ----- | ------- |
+|  | | target | ShEx assumes target set prior to validation  |
+| DescriptionTemplate ID | | |
