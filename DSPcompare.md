@@ -10,9 +10,10 @@
 
 
 
-## Specifics
+## DSP Specifics
+
+(needed?)
 
 | DC-DSP | ShEx | SHACL | Comment |
 | ------ | ---- | ----- | ------- |
-|  | | target | ShEx assumes target set prior to validation  |
 | DescriptionTemplate ID | | |
