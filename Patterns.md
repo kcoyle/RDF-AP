@@ -9,9 +9,13 @@ For the purpose of navigation of the graph, it may be useful to define a primary
 * Main entity (0 or 1)
 * Secondary entities (0 or unlimited)
 
-Entities can be identified using RDF types (classes) or through specific properties.
+Entities can be identified using RDF types (classes) or through specific properties. 
 
 [Note: assume that cardinality can be used throughout, even if not expressly listed.]
+
+## Stand alone
+
+In the Dublin Core Description Set Profile there is a quality called "stand alone" which is either true or false. This determines whether an entity can exist without being the object of some other entity. "False" is is a broader requirement than a dependency because it does not state a dependency on any particular other entity in the set. "True" would allow, for example, that there could be entities for persons even though they are not associated with a specific resource. This could also be useful in allowing entities to be created at a convenient point in the workflow without triggering errors before the description is completed.
 
 ## Properties
 
