@@ -1,3 +1,7 @@
+# Requirments and motivation
+
+Why? Who? What? How? Why do we want to create profiles? Who needs them? What functions do they need to provide? How will they work?
+
 ## Why?
 
 ### How can someone else understand your data well enough to make use of it?
