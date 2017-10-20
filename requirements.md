@@ -19,10 +19,10 @@ Not unlike open source problem: you can declare your code ‘open’ and wish pe
 ### Provide a framework for metadata development
 
 ## Who?
-###Creators: anyone providing data
-###Users
-####anyone who can/is allowed to access the data
-####both people AND machines - not an either/or, but should be both (? if not both, then people?)
+### Creators: anyone providing data
+### Users
+#### anyone who can/is allowed to access the data
+#### both people AND machines - not an either/or, but should be both (? if not both, then people?)
 
 ## What?
 ### Basic structure of the data
@@ -47,6 +47,6 @@ Not unlike open source problem: you can declare your code ‘open’ and wish pe
 #### can values change? How?
 #### what is the relationship between values (e.g. start date <= end date)
 ## How?
-###markdown -> html
-###wiki
-###html with schema.org
+### markdown -> html
+### wiki
+### html with schema.org
