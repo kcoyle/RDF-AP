@@ -1,30 +1,15 @@
-# Description set
+
+
+
+# Description set profile, RDF version
+
+A description set profile is a document that describes the components of a metadata profile: the *things* the metadata describes, the terms it uses to describe those, the allowed values for the terms, rules relating to the values and terms, and human-readable documentation that guides the creation of valid metadata.
+
+# Description Set
 
 # Description Templates
 
-A description Template has the following attributes.
-
-
-
-<del>Identifier
-
-**Summary**
-
-A string that can be used in a Value Constraint to reference a description template that applies to the value resource.
-
-****Allowed values****
-
-A valid XML ID string.
-
-****Default****
-
-N/A
-
-****Label****
-
-ID</del>
-
-_Comment: a separate identifier is not necessary. The description will have a URL as its identifier, as will statements._
+A description will be identified with an IRI.
 
 ## Standalone
 
@@ -118,15 +103,17 @@ if given, the resource must be an instance of one of the given classes.
 
 **Label**
 
-ResourceClass
+resourceClass
 
-# Statement templates
+# Statement template
+
+A statement template is identified with the IRI of an RDF vocabulary term. 
 
 A statement template has the following possible constraints.
 
 **Label**
 
-StatementTemplate
+Each statement has either an rdf:label property, or a label property from another vocabulary, such as SKOS.
 
 ## Minimum occurrence constraint
 
@@ -176,7 +163,7 @@ maxOccurs
 
 **Summary**
 
-The type of value surrogate (literal/non-literal) that is allowed in this Statement.
+The type of value that is allowed in this Statement.
 
 **Allowed values**
 
