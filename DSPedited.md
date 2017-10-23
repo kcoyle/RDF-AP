@@ -129,12 +129,16 @@ must be equal or greater than the Minimum occurrence
 
 maxOccurs
 
-# Statement template
+# Statement
 
-A statement template is identified with the IRI of an RDF vocabulary term. Statements are associated with/members of a description. There are no limits on the number of statement templates that can be associated with a description. A description with no statements is not actionable.
+A statement is a single data element that is used in the metadata to describe the resource that is identified in the description. A statement is identified with the IRI of an RDF vocabulary term. Statements are associated with/members of a description with the _hasStatement_ property. The statement defines the valid values for the vocabulary term, and other constraints.
+
+There are no limits on the number of statements that can be associated with a description. A description with no statements is not actionable.
 
 __Questions: __
+
 __ 1. Can the same property be associated with more than one statement? __
+
 __ 2. Can there be properties that are not associated with a statement? (No) __
 
 A statement template has the following possible constraints.
@@ -189,7 +193,7 @@ must be equal or greater than the Minimum occurrence
 
 maxOccurs
 
-## Type constraint
+## Value type constraint
 
 **Summary**
 
@@ -197,31 +201,35 @@ The type of value that is allowed in this Statement.
 
 **Allowed values**
 
-"literal" / "nonliteral"
+__Should this use object/data from OWL?__
+
+__Would it be useful here to indicate that the value is a value list?__
 
 **Default**
 
-both allowed
+none
 
 **Conditions**
 
-If no value is given, no further constraining on the value surrogate can be made.
+If not provided, there can be no constraints on the value. _Same as OWL annotation property._
 
 **Label**
 
-type
+valueType
 
-Note: that the type constraint should follow any range given for the used properties.
+Note: that the value type constraint should not contradict the range given for the used properties where they are originally defined.
 
-## Property constraints
+## Value constraints
 
-There are two ways of constraining the property in a statement: - By giving an explicit list of allowed properties
+There are two ways of constraining the property value in a statement: 
 
-By requiring the property to be a sub-property of a given property.
+* By giving an explicit list of allowed properties
+
+* By requiring the property to be a sub-property of a given property.
 
 Exactly one of the above methods must be used in a single statement template.
 
-### Property list constraint
+### Value list constraint
 
 **Summary**
 
