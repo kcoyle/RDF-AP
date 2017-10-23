@@ -9,21 +9,21 @@ A description set profile is a document that describes the components of a metad
 
 # Description Templates
 
-A description will be identified with an IRI.
+A description describes a single resource; that resource is identified with an IRI.
 
 ## Standalone
 
 **Summary**
 
-Whether descriptions matching this template are allowed to occur standalone, i.e. without being the value of a property.
+Whether descriptions matching this template are allowed to occur standalone, i.e. without being the value of a property. 
 
 **Allowed values**
 
-"yes" / "no" / "both"
+"yes" / "no" (xsd:boolean)
 
 **Default**
 
-"both"
+none
 
 **Conditions**
 
@@ -31,7 +31,7 @@ If standalone is "yes", a matching description may not be a description of value
 
 If standalone is "no", a matching description *must* be a description of value occurring elsewhere in the DSP. 
 
-If standalone is "both", both are allowed. 
+If standalone is not defined, then the description set is silent on this issue.
 
 If this description template is referred to in a Value Constraint, standalone cannot be "yes".
 
@@ -95,11 +95,11 @@ a list of class URIs
 
 **Default**
 
-no constraint
+none
 
 **Conditions**
 
-if given, the resource must be an instance of one of the given classes.
+if given, the resource must be an instance of one of the given classes. If this property is not used, there is no constraint on the what classes the description may be an instance of
 
 **Label**
 
@@ -107,19 +107,21 @@ resourceClass
 
 # Statement template
 
-A statement template is identified with the IRI of an RDF vocabulary term. 
+A statement template is identified with the IRI of an RDF vocabulary term. There are no limits on the number of statement templates that can be associated with a description.
 
 A statement template has the following possible constraints.
 
 **Label**
 
-Each statement has either an rdf:label property, or a label property from another vocabulary, such as SKOS.
+Each statement has either an rdf:label property, or a label property from another vocabulary, such as SKOS. 
+
+__Issue: should labels from the original vocabulary be used if no label is given in the description set?__
 
 ## Minimum occurrence constraint
 
 **Summary**
 
-The minimum number of times this kind of statement must appear in the enclosing Description.
+The minimum number of times this kind of statement must appear in the enclosing Description. If the value of this property is zero ("0"), the this statement is not required. 
 
 **Allowed values**
 
@@ -141,15 +143,15 @@ minOccurs
 
 **Summary**
 
-The maximum number of times this kind of statement is allowed to appear in the enclosing Description.
+The maximum number of times this kind of statement is allowed to appear in the enclosing Description. If the value of this property is greater than one, then this property is repeatable. If no maxOccurs property is included in the profile, then the property is repeatable and there are no limits on how many times it can be repeated.
 
 **Allowed values**
 
-non-negative integer or "infinity"
+non-negative integer
 
 **Default**
 
-"infinity"
+none
 
 **Conditions**
 
