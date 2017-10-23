@@ -7,7 +7,9 @@ A description set profile is a document that describes the components of a metad
 
 # Description Set
 
-# Description Templates
+A description set is a document with one or more descriptions.
+
+# Description
 
 A description describes a single resource; that resource is identified with an IRI.
 
@@ -61,27 +63,27 @@ must be equal or less than the Maximum occurrence
 
 minOccurs
 
-## Maximum occurrence constraint
+## Has statement
 
 **Summary**
 
-The maximum number of times this kind of description is allowed to appear in the Description Set.
+Relationship of a description to its statement(s). 
 
 **Allowed values**
 
-non-negative integer or "infinity"
+IRI of a statement
 
 **Default**
 
-"infinity"
+none
 
 **Conditions**
 
-must be equal or greater than the Minimum occurrence
+There SHOULD be at least one statement associated with each description. There is no limit on the number of statements.
 
 **Label**
 
-maxOccurs
+hasStatement
 
 ## Resource Class Membership Constraint
 
@@ -105,9 +107,35 @@ if given, the resource must be an instance of one of the given classes. If this 
 
 resourceClass
 
+## Maximum occurrence constraint
+
+**Summary**
+
+The maximum number of times this kind of description is allowed to appear in the Description Set.
+
+**Allowed values**
+
+non-negative integer or "infinity"
+
+**Default**
+
+"infinity"
+
+**Conditions**
+
+must be equal or greater than the Minimum occurrence
+
+**Label**
+
+maxOccurs
+
 # Statement template
 
-A statement template is identified with the IRI of an RDF vocabulary term. There are no limits on the number of statement templates that can be associated with a description.
+A statement template is identified with the IRI of an RDF vocabulary term. Statements are associated with/members of a description. There are no limits on the number of statement templates that can be associated with a description. A description with no statements is not actionable.
+
+__Questions: __
+__ 1. Can the same property be associated with more than one statement? __
+__ 2. Can there be properties that are not associated with a statement? (No) __
 
 A statement template has the following possible constraints.
 
