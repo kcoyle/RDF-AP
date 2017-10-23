@@ -37,7 +37,7 @@ If standalone is not defined, then the description set is silent on this issue.
 
 If this description template is referred to in a Value Constraint, standalone cannot be "yes".
 
-**Label**
+**Name**
 
 standalone
 
@@ -59,7 +59,7 @@ non-negative integer
 
 must be equal or less than the Maximum occurrence
 
-**Label**
+**Name**
 
 minOccurs
 
@@ -81,7 +81,7 @@ none
 
 There SHOULD be at least one statement associated with each description. There is no limit on the number of statements.
 
-**Label**
+**Name**
 
 hasStatement
 
@@ -103,7 +103,7 @@ none
 
 if given, the resource must be an instance of one of the given classes. If this property is not used, there is no constraint on the what classes the description may be an instance of
 
-**Label**
+**Name**
 
 resourceClass
 
@@ -125,7 +125,7 @@ non-negative integer or "infinity"
 
 must be equal or greater than the Minimum occurrence
 
-**Label**
+**Name**
 
 maxOccurs
 
@@ -143,7 +143,7 @@ __ 2. Can there be properties that are not associated with a statement? (No) __
 
 A statement template has the following possible constraints.
 
-**Label**
+**Name**
 
 Each statement has either an rdf:label property, or a label property from another vocabulary, such as SKOS. 
 
@@ -167,7 +167,7 @@ non-negative integer
 
 must be equal or less than the Maximum occurrence
 
-**Label**
+**Name**
 
 minOccurs
 
@@ -189,7 +189,7 @@ none
 
 must be equal or greater than the Minimum occurrence
 
-**Label**
+**Name**
 
 maxOccurs
 
@@ -213,7 +213,7 @@ none
 
 If not provided, there can be no constraints on the value. _Same as OWL annotation property._
 
-**Label**
+**Name**
 
 valueType
 
@@ -247,7 +247,7 @@ N/A
 
 cannot occur together with a sub-property constraint
 
-**Label**
+**Name**
 
 Property
 
@@ -269,7 +269,7 @@ N/A
 
 cannot occur together with a property list constraint
 
-**Label**
+**Name**
 
 SubPropertyOf
 
@@ -277,7 +277,7 @@ SubPropertyOf
 
 Constrains a literal value surrogate in a statement. Only allowed in the case that the type constraint has the value "literal".
 
-**Label**
+**Name**
 
 LiteralConstraint
 
@@ -299,7 +299,7 @@ no constraint
 
 if given, no other literal constraint may be given
 
-**Label**
+**Name**
 
 LiteralOption
 
@@ -321,7 +321,7 @@ Whether languages are allowed for the literal
 
 if "mandatory", Syntax encoding schemes are automatically disallowed.
 
-**Label**
+**Name**
 
 LanguageOccurrence
 
@@ -339,7 +339,7 @@ a list consisting of language tags
 
 no constraint
 
-**Label**
+**Name**
 
 Language
 
@@ -361,7 +361,7 @@ Whether Syntax Encoding Scheme are allowed for the literal
 
 if "mandatory", language tags are automatically disallowed.
 
-**Label**
+**Name**
 
 SyntaxEncodingSchemeOccurrence
 
@@ -379,7 +379,7 @@ a list consisting of syntax encoding scheme URIs
 
 no constraint
 
-**Label**
+**Name**
 
 SyntaxEncodingScheme
 
@@ -387,7 +387,7 @@ SyntaxEncodingScheme
 
 Constrains the value surrogate in a statement. Only allowed in the case that the type constraint has the value "nonliteral".
 
-**Label**
+**Name**
 
 NonLiteralConstraint
 
@@ -409,7 +409,7 @@ Related description not allowed
 
 if given, any related description of the value within the record must match the referenced Description Template. If the referenced Description Template contains mandatory Statement templates, such a description of the value must exist.
 
-**Label**
+**Name**
 
 descriptionTemplateRef
 
@@ -431,7 +431,7 @@ no constraint
 
 if given, the value must be an instance of one of the given classes.
 
-**Label**
+**Name**
 
 ValueClass
 
@@ -455,7 +455,7 @@ Whether a value URI must be given
 
 **Conditions**
 
-**Label**
+**Name**
 
 ValueURIOccurrence
 
@@ -477,7 +477,7 @@ no constraint
 
 If a value URI is given, it must be taken from this list. Cannot be specified if value occurrence is "disallowed"
 
-**Label**
+**Name**
 
 ValueURI
 
@@ -499,7 +499,7 @@ Whether a vocabulary encoding scheme must be given
 
 **Conditions**
 
-**Label**
+**Name**
 
 VocabularyEncodingSchemeOccurrence
 
@@ -521,7 +521,7 @@ no constraint
 
 If a vocabulary encoding scheme is given, it must be taken from this list. Cannot be specified if vocabulary encoding scheme occurrence is "disallowed"
 
-**Label**
+**Name**
 
 VocabularyEncodingScheme
 
@@ -531,7 +531,7 @@ If at least one value string constraint is given, any value string must match at
 
 For each value string constraint, the following may be specified.
 
-**Label**
+**Name**
 
 ValueStringConstraint
 
@@ -553,7 +553,7 @@ non-negative integer
 
 must be equal or less than the Maximum occurrence
 
-**Label**
+**Name**
 
 minOccurs
 
@@ -575,7 +575,7 @@ non-negative integer or "infinity"
 
 must be equal or greater than the Minimum occurrence
 
-**Label**
+**Name**
 
 maxOccurs
 
