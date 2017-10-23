@@ -135,11 +135,11 @@ A statement is a single data element that is used in the metadata to describe th
 
 There are no limits on the number of statements that can be associated with a description. A description with no statements is not actionable.
 
-__Questions: __
+_Questions_
 
-__ 1. Can the same property be associated with more than one statement? __
+_1. Can the same property be associated with more than one statement?_
 
-__ 2. Can there be properties that are not associated with a statement? (No) __
+_2. Can there be properties that are not associated with a statement?_
 
 A statement template has the following possible constraints.
 
@@ -147,7 +147,7 @@ A statement template has the following possible constraints.
 
 Each statement has either an rdf:label property, or a label property from another vocabulary, such as SKOS. 
 
-__Issue: should labels from the original vocabulary be used if no label is given in the description set?__
+_Issue: should labels from the original vocabulary be used if no label is given in the description set?_
 
 ## Minimum occurrence constraint
 
@@ -201,9 +201,9 @@ The type of value that is allowed in this Statement.
 
 **Allowed values**
 
-__Should this use object/data from OWL?__
+_Should this use object/data from OWL?_
 
-__Would it be useful here to indicate that the value is a value list?__
+_Would it be useful here to indicate that the value is a value list?_
 
 **Default**
 
@@ -229,7 +229,7 @@ There are two ways of constraining the property value in a statement:
 
 Exactly one of the above methods must be used in a single statement template.
 
-### Value list constraint
+### Allowed properties constraint (remove?)
 
 **Summary**
 
@@ -273,9 +273,11 @@ cannot occur together with a property list constraint
 
 SubPropertyOf
 
-## Literal value constraints
+## Literal value constraints 
 
-Constrains a literal value surrogate in a statement. Only allowed in the case that the type constraint has the value "literal".
+Constrains a literal value in a statement. Only allowed in the case that the type constraint has the value "literal".
+
+_This can be a heading, but not sure that we need a property. This probably makes sense if you're creating an XNL document_
 
 **Name**
 
@@ -301,13 +303,13 @@ if given, no other literal constraint may be given
 
 **Name**
 
-LiteralOption
+literalList
 
-### Literal language constraint
+### Language constraint
 
 **Summary**
 
-Whether languages are allowed for the literal
+Whether languages are required for the literal
 
 **Allowed values**
 
@@ -319,11 +321,11 @@ Whether languages are allowed for the literal
 
 **Conditions**
 
-if "mandatory", Syntax encoding schemes are automatically disallowed.
+(DCAM: if "mandatory", Syntax encoding schemes are automatically disallowed.)(Drop?) 
 
 **Name**
 
-LanguageOccurrence
+languageOccurrence
 
 ### Literal language list constraint
 
@@ -333,15 +335,24 @@ Languages allowed for the literal
 
 **Allowed values**
 
-a list consisting of language tags
+a list consisting of language tags (@xx)
 
 **Default**
 
 no constraint
 
+**Conditions**
+
+This should only apply if languageOccurrence is not "disallowed".
+
+Can be tested with SHACL:languageIn. Language-tagged strings are defined as type http://www.w3.org/1999/02/22-rdf-syntax-ns#langString.
+
+_there also needs to be a constraint on each language can appear only once_
+
 **Name**
 
-Language
+validLanguageList
+
 
 ### Syntax Encoding Scheme constraint
 
