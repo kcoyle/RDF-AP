@@ -113,6 +113,10 @@ resourceClass
 
 The maximum number of times this kind of description is allowed to appear in the Description Set.
 
+**Comment**
+
+_It may not be possible to use "infinity" if this is defined as datatype non-negative integer. Instead, if no maximum is given, no constraint is assumed (which = infinity)__
+
 **Allowed values**
 
 non-negative integer or "infinity"
@@ -135,13 +139,15 @@ A statement is a single data element that is used in the metadata to describe th
 
 There are no limits on the number of statements that can be associated with a description. A description with no statements is not actionable.
 
-_Questions_
+A statement template has the following possible constraints.
+
+**Comment**
+
+_Questions on this_
 
 _1. Can the same property be associated with more than one statement?_
 
 _2. Can there be properties that are not associated with a statement?_
-
-A statement template has the following possible constraints.
 
 **Name**
 
@@ -177,6 +183,10 @@ minOccurs
 
 The maximum number of times this kind of statement is allowed to appear in the enclosing Description. If the value of this property is greater than one, then this property is repeatable. If no maxOccurs property is included in the profile, then the property is repeatable and there are no limits on how many times it can be repeated.
 
+**Comment**
+
+_It may not be possible to use "infinity" if this is defined as datatype non-negative integer. Instead, if no maximum is given, no constraint is assumed (which = infinity)__
+
 **Allowed values**
 
 non-negative integer
@@ -201,7 +211,11 @@ The type of value that is allowed in this Statement.
 
 **Allowed values**
 
-_Should this use object/data from OWL?_
+"literal" / "nonliteral"
+
+**Comment**
+
+_The original values of literal and nonliteral followed the DCAM, and the constraints were based on DCAM notions of value surrogates. To move away from that, should this use object/data from OWL?_
 
 _Would it be useful here to indicate that the value is a value list?_
 
@@ -235,6 +249,10 @@ Exactly one of the above methods must be used in a single statement template.
 
 A set of properties that are allowed in this statement template.
 
+**Comment**
+
+_The properties that are allowed will be those in the statements. This isn't needed. We will need to say whether the list is open or closed; that is, whether the presence of properties not in the list is an error._
+
 **Allowed values**
 
 a list of property URIs
@@ -251,7 +269,7 @@ cannot occur together with a sub-property constraint
 
 Property
 
-### Sub-property constraint
+### Sub-property constraint (remove?)
 
 **Summary**
 
@@ -277,7 +295,9 @@ SubPropertyOf
 
 Constrains a literal value in a statement. Only allowed in the case that the type constraint has the value "literal".
 
-_This can be a heading, but not sure that we need a property. This probably makes sense if you're creating an XNL document_
+**Comment**
+
+_This can be a heading, but not sure that we need a property. We'll need to decide this after we model the RDF._
 
 **Name**
 
@@ -311,6 +331,10 @@ literalList
 
 Whether languages are required for the literal
 
+**Comment**
+
+_For validation purposes, the values seem to be yes/no, and optional is that this property is not included. But the difficulty is where there is no constraint but a set of valid language codes is given. That could be difficult to express as a validation statement._
+
 **Allowed values**
 
 "mandatory" / "optional" / "disallowed"
@@ -321,21 +345,29 @@ Whether languages are required for the literal
 
 **Conditions**
 
-(DCAM: if "mandatory", Syntax encoding schemes are automatically disallowed.)(Drop?) 
+_(DCAM: if "mandatory", Syntax encoding schemes are automatically disallowed.)(Drop?)_
 
 **Name**
 
 languageOccurrence
 
-### Literal language list constraint
+### Language list constraint
 
 **Summary**
 
 Languages allowed for the literal
 
+**Comment**
+
+_What is the format of the list? An RDF list? A comma-delimited list? Do the strings need to be in quotes: "@en","@de"? or @en,@de?_
+
+_Can be tested with SHACL:languageIn. Language-tagged strings are defined as type http://www.w3.org/1999/02/22-rdf-syntax-ns#langString._
+
+_there also needs to be a constraint on each language can appear only once_
+
 **Allowed values**
 
-a list consisting of language tags (@xx)
+a list consisting of language tags (@xx).
 
 **Default**
 
@@ -344,10 +376,6 @@ no constraint
 **Conditions**
 
 This should only apply if languageOccurrence is not "disallowed".
-
-Can be tested with SHACL:languageIn. Language-tagged strings are defined as type http://www.w3.org/1999/02/22-rdf-syntax-ns#langString.
-
-_there also needs to be a constraint on each language can appear only once_
 
 **Name**
 
