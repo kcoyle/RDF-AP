@@ -7,21 +7,27 @@ A description set profile is a document that describes the components of a metad
 
 # Description Set
 
-A description set is a document with one or more descriptions.
+A description set is a document with one or more descriptions. The IRI of the description set identifies a single resource that may be described with multiple component descriptions, such as journal article metadata that has separate but linked descriptions for the text, the persons who authored the text, and the publisher responsible for publication.
 
-# Description
+##Administrative
 
-A description describes a single resource; that resource is identified with an IRI.
+**Comment**
 
-## Standalone
+_Probably more administrative information is desired, including: creators, license terms for re-use. I have included Version because that seems to be a universal need. I don't know what else is essential, or if we can push this off to a vocabulary like VOID._ 
+
+## Topic
 
 **Summary**
 
-Whether descriptions matching this template are allowed to occur standalone, i.e. without being the value of a property. 
+Topic areas covered by the metadata, such as "documents", "weather data", etc.
+
+**Comment**
+
+_This is needed for discoverability. It could use dct:subject, or it could be done as a schema.org statement if the final document is in HTML. Probably we cannot work this out until we have a better idea of what the form (or forms) of DSP2 will be._
 
 **Allowed values**
 
-"yes" / "no" (xsd:boolean)
+Ideally taken from a controlled list. Could be text or an IRI. If an IRI a label should be included for discoverability. Text can be provided as a comma-delimited string.
 
 **Default**
 
@@ -29,11 +35,83 @@ none
 
 **Conditions**
 
-If standalone is "yes", a matching description may not be a description of value occurring elsewhere in the DSP. 
+none
+
+**Name**
+
+topic
+
+## Version
+
+**Summary**
+
+The version of the DSP2 document.
+
+**Allowed values**
+
+Any text
+
+**Conditions**
+
+None
+
+**Name**
+
+version
+
+## Version date
+
+**summary**
+
+The date of the version of the document in a standard date form: YYYYMMDD, YYYYMM, YYYY
+
+**Allowed values**
+
+Must be a valid date. 
+
+**Conditions**
+
+none
+
+**Name**
+
+versionDate
+
+# Description
+
+A description describes a single resource; that resource is identified with an IRI.
+
+**Comment**
+
+_I always thought of the descriptions as entities, but could a description be simply a set of properties that don't define an entity per se, such as a group of administrative properties?_
+
+## Standalone
+
+**Summary**
+
+Whether descriptions matching this template are allowed to occur standalone, i.e. without being the value of a property. 
+
+**Comment**
+
+_It would be good to have an example of a situation where this is essential. It seems that with graphs this could be too restrictive. Also this probably requires more validation logic than we can handle here._
+
+**Allowed values**
+
+"yes" / "no" / "either"
+
+**Default**
+
+none
+
+**Conditions**
+
+If standalone is "yes", a matching description may not be a description of value occurring elsewhere in the DSP. The description must "stand alone".  
 
 If standalone is "no", a matching description *must* be a description of value occurring elsewhere in the DSP. 
 
-If standalone is not defined, then the description set is silent on this issue.
+If standalone is "either" then the description can be used either alone or as a value. 
+
+If standalone is not defined, then the description set is silent on this issue, which has the same affect as "either". 
 
 If this description template is referred to in a Value Constraint, standalone cannot be "yes".
 
@@ -55,35 +133,43 @@ non-negative integer
 
 0
 
+If undefined, no minimum is enforced. Description is optional. 
+
+Any positive integer means the description is required for the resource identified by the description set. 
+
 **Conditions**
 
-must be equal or less than the Maximum occurrence
+Must be equal or less than the Maximum occurrence
 
 **Name**
 
 minOccurs
 
-## Has statement
+## Maximum occurrence constraint
 
 **Summary**
 
-Relationship of a description to its statement(s). 
+The maximum number of times this kind of description is allowed to appear in the Description Set.
+
+**Comment**
+
+_It may not be possible to use "infinity" if this is defined as datatype non-negative integer. Instead, if no maximum is given, no constraint is assumed (which = infinity)__
 
 **Allowed values**
 
-IRI of a statement
+non-negative integer or "infinity"
 
 **Default**
 
-none
+<del>"infinity"</del>
 
 **Conditions**
 
-There SHOULD be at least one statement associated with each description. There is no limit on the number of statements.
+Must be equal or greater than the Minimum occurrence. If there is no maximum to enforce, this constraint must not be included in the set.
 
 **Name**
 
-hasStatement
+maxOccurs
 
 ## Resource Class Membership Constraint
 
@@ -103,35 +189,33 @@ none
 
 if given, the resource must be an instance of one of the given classes. If this property is not used, there is no constraint on the what classes the description may be an instance of
 
+_Not clear why "resource" is used here. Until now this has been called a description. It might make sense to use resource, but we would have to do that throughout. Or we could talk about a "resource description"._
+
 **Name**
 
 resourceClass
 
-## Maximum occurrence constraint
+## Has statement
 
 **Summary**
 
-The maximum number of times this kind of description is allowed to appear in the Description Set.
-
-**Comment**
-
-_It may not be possible to use "infinity" if this is defined as datatype non-negative integer. Instead, if no maximum is given, no constraint is assumed (which = infinity)__
+Relationship of a description to its statement(s). 
 
 **Allowed values**
 
-non-negative integer or "infinity"
+IRI of a statement
 
 **Default**
 
-"infinity"
+none
 
 **Conditions**
 
-must be equal or greater than the Minimum occurrence
+There SHOULD be at least one statement associated with each description. There is no limit on the number of statements. 
 
 **Name**
 
-maxOccurs
+hasStatement
 
 # Statement
 
@@ -203,6 +287,8 @@ must be equal or greater than the Minimum occurrence
 
 maxOccurs
 
+# Value constraints
+
 ## Value type constraint
 
 **Summary**
@@ -211,7 +297,8 @@ The type of value that is allowed in this Statement.
 
 **Allowed values**
 
-"literal" / "nonliteral"
+<deL>"literal" / "nonliteral"</del>
+"Object" (IRI) / "Datatype" (xsd:)/ "literal" ()
 
 **Comment**
 
@@ -221,7 +308,7 @@ _Would it be useful here to indicate that the value is a value list?_
 
 **Default**
 
-none
+If undefined, no further value constraints are applied.
 
 **Conditions**
 
@@ -233,63 +320,66 @@ valueType
 
 Note: that the value type constraint should not contradict the range given for the used properties where they are originally defined.
 
-## Value constraints
 
-There are two ways of constraining the property value in a statement: 
+## Object constraints
 
-* By giving an explicit list of allowed properties
+Object values are always IRIs. IRIs can be complete or can be patterns that include the domain, domain name, or some portion of the IRI path.
 
-* By requiring the property to be a sub-property of a given property.
+e.g.s
 
-Exactly one of the above methods must be used in a single statement template.
+http://id.loc.gov/authorities/names*  ##limited to name authority list
 
-### Allowed properties constraint (remove?)
+http://id.loc.gov/authorities/* ##limited to any LC authority list
 
-**Summary**
+http://id.loc.gov/ ## limited to any LC IRIs at id.loc.gov
 
-A set of properties that are allowed in this statement template.
+http://.gov/ ## allows any IRI from the .gov domain
 
-**Comment**
+Note that a DSP Description can be the value of an object statement. 
 
-_The properties that are allowed will be those in the statements. This isn't needed. We will need to say whether the list is open or closed; that is, whether the presence of properties not in the list is an error._
-
-**Allowed values**
-
-a list of property URIs
-
-**Default**
-
-N/A
-
-**Conditions**
-
-cannot occur together with a sub-property constraint
-
-**Name**
-
-Property
-
-### Sub-property constraint (remove?)
+### IRI list constraint
 
 **Summary**
 
-Only sub-properties of the given property are allowed in this statement template. Note that the given property is included in this list (all properties are sub-properties of themselves).
+IRIs that are allowed as values.
 
 **Allowed values**
 
-a property URI
+a list of IRIs that can be used as values. The list can also contain IRI "stubs" giving at least the
 
 **Default**
 
-N/A
+no constraint
 
 **Conditions**
 
-cannot occur together with a property list constraint
+none
 
 **Name**
 
-SubPropertyOf
+IRIList
+
+### Unique IRI constraint
+
+**Summary**
+
+For a given property, an IRI can appear only once
+
+**Allowed values**
+
+Yes / No
+
+**Default**
+
+no constraint
+
+**Conditions**
+
+_This requires comparing values for some set of properties. This gets into complex validation because it looks at more than one property._
+
+**Name**
+
+UniqueIRI
 
 ## Literal value constraints 
 
@@ -325,7 +415,51 @@ if given, no other literal constraint may be given
 
 literalList
 
-### Language constraint
+### Literal maximum length constraint
+
+**Summary**
+
+The maximum allowed length of the literal in bytes
+
+**Allowed values**
+
+non-negative integer
+
+**Default**
+
+no constraint
+
+**Conditions**
+
+Maximum length must be greater than or equal to minimum length
+
+**Name**
+
+literalMaxLength
+
+### Literal minimum length constraint
+
+**Summary**
+
+The minimum allowed length of the literal in bytes
+
+**Allowed values**
+
+non-negative integer
+
+**Default**
+
+no constraint
+
+**Conditions**
+
+Minimum length must be less than or equal to maximum length
+
+**Name**
+
+literalMinLength
+
+### Language tag constraint
 
 **Summary**
 
@@ -349,13 +483,35 @@ _(DCAM: if "mandatory", Syntax encoding schemes are automatically disallowed.)(D
 
 **Name**
 
-languageOccurrence
+languageTag
+
+### Unique language constraint
+
+**Summary**
+
+For a given property, only one string can appear per language tag. 
+
+**Allowed values**
+
+Yes / No
+
+**Default**
+
+no constraint
+
+**Conditions**
+
+_This requires comparing values for some set of properties. This gets into complex validation because it looks at more than one property. It fulfills some SKOS requirements._
+
+**Name**
+
+UniqueIRI
 
 ### Language list constraint
 
 **Summary**
 
-Languages allowed for the literal
+Languages allowed for the literal. The language tag must be one of the tags 
 
 **Comment**
 
@@ -375,22 +531,24 @@ no constraint
 
 **Conditions**
 
-This should only apply if languageOccurrence is not "disallowed".
+This should only apply if languageTag is not "disallowed".
 
 **Name**
 
 validLanguageList
 
 
-### Syntax Encoding Scheme constraint
+
+
+### Datatype constraint
 
 **Summary**
 
-Whether Syntax Encoding Scheme are allowed for the literal
+The datatype that is valid for this property
 
 **Allowed values**
 
-"mandatory" / "optional" / "disallowed"
+An xsd: datatype
 
 **Default**
 
@@ -398,69 +556,21 @@ Whether Syntax Encoding Scheme are allowed for the literal
 
 **Conditions**
 
-if "mandatory", language tags are automatically disallowed.
+must be valid xsd: datatypes
 
 **Name**
 
-SyntaxEncodingSchemeOccurrence
+dataType
 
-### Syntax Encoding Scheme list constraint
+### Datatype list constraint
 
 **Summary**
 
-Syntax encoding schemes allowed for the literal
+A list of xsd: datatypes that are valid for this property
 
 **Allowed values**
 
-a list consisting of syntax encoding scheme URIs
-
-**Default**
-
-no constraint
-
-**Name**
-
-SyntaxEncodingScheme
-
-## Non-literal value constraints
-
-Constrains the value surrogate in a statement. Only allowed in the case that the type constraint has the value "nonliteral".
-
-**Name**
-
-NonLiteralConstraint
-
-### Description template reference
-
-**Summary**
-
-A reference to a description template that may be used to describe the value
-
-**Allowed values**
-
-an identifier defined in a Description Template
-
-**Default**
-
-Related description not allowed
-
-**Conditions**
-
-if given, any related description of the value within the record must match the referenced Description Template. If the referenced Description Template contains mandatory Statement templates, such a description of the value must exist.
-
-**Name**
-
-descriptionTemplateRef
-
-### Class membership constraint
-
-**Summary**
-
-Classes that the value may be an instance of
-
-**Allowed values**
-
-a list of class URIs
+a list consisting of xsd: datatypes
 
 **Default**
 
@@ -468,45 +578,25 @@ no constraint
 
 **Conditions**
 
-if given, the value must be an instance of one of the given classes.
+Must be valid xsd: datatypes
 
 **Name**
 
-ValueClass
+dataTypeList
 
-Note: this is not a syntactic constraint, and as such might not be evaluated by all processors. If a type statement is desired, an explicit Statement template in a Description Template for the value resource should be created.
-
-### Value URI constraint
-
-#### Value URI occurrence constraint
+### Datatype value constraint
 
 **Summary**
 
-Whether a value URI must be given
+Constraints on the actual values, such as "date must be > 1990"
+
+**Comment**
+
+_This is something the validation languages can do. It isn't clear if there can be a simple form of this, but it is a common need._
 
 **Allowed values**
 
-"disallowed" / "optional" / "mandatory"
-
-**Default**
-
-"optional"
-
-**Conditions**
-
-**Name**
-
-ValueURIOccurrence
-
-#### Value URI list constraint
-
-**Summary**
-
-URIs that are allowed as value URIs.
-
-**Allowed values**
-
-a list of URIs
+text describing the desired constraints
 
 **Default**
 
@@ -514,110 +604,9 @@ no constraint
 
 **Conditions**
 
-If a value URI is given, it must be taken from this list. Cannot be specified if value occurrence is "disallowed"
+
 
 **Name**
 
-ValueURI
+dataTypeValue
 
-### Vocabulary encoding scheme constraint
-
-#### Vocabulary encoding scheme occurrence constraint
-
-**Summary**
-
-Whether a vocabulary encoding scheme must be given
-
-**Allowed values**
-
-"disallowed" / "optional" / "mandatory"
-
-**Default**
-
-"optional"
-
-**Conditions**
-
-**Name**
-
-VocabularyEncodingSchemeOccurrence
-
-#### Vocabulary encoding scheme list constraint
-
-**Summary**
-
-URIs that are allowed as Vocabulary Encoding schemes.
-
-**Allowed values**
-
-a list of URIs
-
-**Default**
-
-no constraint
-
-**Conditions**
-
-If a vocabulary encoding scheme is given, it must be taken from this list. Cannot be specified if vocabulary encoding scheme occurrence is "disallowed"
-
-**Name**
-
-VocabularyEncodingScheme
-
-### Value String Constraints
-
-If at least one value string constraint is given, any value string must match at least one of the constraints. If no value string constraint is given, any value string is allowed.
-
-For each value string constraint, the following may be specified.
-
-**Name**
-
-ValueStringConstraint
-
-#### Minimum occurrence constraint
-
-**Summary**
-
-The minimum number of times this kind of value string must appear in the enclosing Statement.
-
-**Allowed values**
-
-non-negative integer
-
-**Default**
-
-0
-
-**Conditions**
-
-must be equal or less than the Maximum occurrence
-
-**Name**
-
-minOccurs
-
-#### Maximum occurrence constraint
-
-**Summary**
-
-The maximum number of times this kind of value string is allowed to appear in the enclosing Statement.
-
-**Allowed values**
-
-non-negative integer or "infinity"
-
-**Default**
-
-"infinity"
-
-**Conditions**
-
-must be equal or greater than the Minimum occurrence
-
-**Name**
-
-maxOccurs
-
-#### Other constraints
-
-All Literal value constraints (section 6.5) can be used for value strings as well.
