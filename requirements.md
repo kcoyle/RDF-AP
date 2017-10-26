@@ -50,6 +50,10 @@ Not unlike open source problem: you can declare your code ‘open’ and wish pe
 #### what are/is the range of/ valid values
 #### can values change? How?
 #### what is the relationship between values (e.g. start date <= end date)
+## Administration of the profile
+### Versioning
+### Creator
+### Rights
 ## How?
 ### markdown -> html
 ### wiki
