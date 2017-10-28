@@ -6,7 +6,7 @@ This is ongoing work to modify the DC-Description Set Profile, taking into accou
 
 [Requirements](requirements.md) is a list of requirements.
 
-[Use cases](use_cases.md) is a gathering of use cases relevant to the task.
+[Use cases](Use_cases.md) is a gathering of use cases relevant to the task.
 
 [Description Set Profile - 2](DSPedited.md) is a re-writing of the DSP document.
 
