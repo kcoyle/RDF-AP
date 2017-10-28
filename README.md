@@ -4,10 +4,10 @@ This is ongoing work to modify the DC-Description Set Profile, taking into accou
 
 [Patterns](Patterns.md) proposes a basic list of design patterns used for metadata description and validation.
 
-(requirements.md)[Requirements] is a list of requirements.
+[Requirements](requirements.md) is a list of requirements.
 
-(use_cases.md)[Use cases] is a gathering of use cases relevant to the task.
+[Use cases](use_cases.md) is a gathering of use cases relevant to the task.
 
-(DSPedited.md)[Description Set Profile - 2] is a beginning of a re-written DSP document.
+[Description Set Profile - 2](DSPedited.md) is a re-writing of the DSP document.
 
 
