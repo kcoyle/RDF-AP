@@ -1,1 +1,1 @@
-descSetRef,id,display name,short description,long description,minOccur,maxOccur,standalone?,class(list?),rule
+descSetID,descID,label,shortDescription,longDescription,minOccur,maxOccur,standalone?,class(list?)
