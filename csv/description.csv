@@ -1,1 +1,1 @@
-descSetID,descID,label,shortDescription,longDescription,minOccur,maxOccur,standalone?,class(list?)
+descID,descSetID,label,shortDescription,longDescription,minOccur,maxOccur,standalone,class
