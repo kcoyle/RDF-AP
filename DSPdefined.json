@@ -1,0 +1,73 @@
+{
+  "@context": "http://www.w3.org/ns/csvw",
+  "tables": [{
+    "url": "http://example.org/descriptionSet.csv",
+    "tableSchema": {
+      "columns": [{
+        "name": "descID",
+        "datatype": "string"
+      }, {
+        "name": "version",    id,version,versionDate,topic,creator
+        "datatype": "string"
+      }, {
+        "name": "versionDate",
+        "datatype": "date"
+      }, {
+        "name": "topic",
+        "datatype": "string"
+      }, {
+		  "name": "creator",
+		  "datatype": "string"
+      }
+  		],
+      "aboutUrl": "http://example.org/dsp.csv{#descID}",
+      "propertyUrl": "http://example.come/{_name}",
+      "primaryKey": "descID"
+    }
+  }, {
+    "url": "http://example.org/description.csv",
+    "tableSchema": {
+      "columns": [{
+        "name": "descSetID",
+        "valueUrl": "http://example.org/dsp.csv{#descSetID}"
+      }, {
+        "name": "descID",
+        "datatype": "string"
+      }, {
+        "name": "label",
+        "datatype": "string"
+      }, {
+		  "name": "shortDescription",
+		  "datatype": "string"
+      },
+	  {
+	  	  "name": "longDescription",
+	  	  "datatype": "string"
+        },
+		{
+		  "name": "minOccurs",
+		  "datatype": "integer"
+	      },
+		  {
+	  	  "name": "maxOccurs",
+		  "datatype": "integer"
+		   },
+		   {
+			   "name": "standalone",
+			   "datatype": "string"
+		   },
+		   {
+			   "name": "class",
+			   "datatype": "string"
+		   }
+  ],
+      "foreignKeys": [{
+        "columnReference": "descSetID",
+        "reference": {
+          "resource": "http://example.org/description.csv",
+          "columnReference": "descSetID"
+        }
+      }]
+    }
+  }]
+}
