@@ -1,1 +1,1 @@
-id,display name,short description,long description,minOccur,maxOccur,standalone?,class(list?),rule
+descID,descSetID,label,shortDescription,longDescription,minOccur,maxOccur,standalone,class
