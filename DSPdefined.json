@@ -7,7 +7,7 @@
         "name": "descID",
         "datatype": "string"
       }, {
-        "name": "version",    id,version,versionDate,topic,creator
+        "name": "version",
         "datatype": "string"
       }, {
         "name": "versionDate",
@@ -21,7 +21,7 @@
       }
   		],
       "aboutUrl": "http://example.org/dsp.csv{#descID}",
-      "propertyUrl": "http://example.come/{_name}",
+      "propertyUrl": "http://example.com/{_name}",
       "primaryKey": "descID"
     }
   }, {
@@ -65,7 +65,7 @@
         "columnReference": "descSetID",
         "reference": {
           "resource": "http://example.org/description.csv",
-          "columnReference": "descSetID"
+          "columnReference": "descSetI"
         }
       }]
     }
