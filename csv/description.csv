@@ -1,1 +1,3 @@
 descID,descSetID,label,shortDescription,longDescription,minOccur,maxOccur,standalone,class
+d345,ds123,"Book","Description of a book","The full bibliographic description of a book.",1,1,"yes","ex:Book"
+

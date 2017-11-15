@@ -65,7 +65,7 @@
         "columnReference": "descSetID",
         "reference": {
           "resource": "http://example.org/description.csv",
-          "columnReference": "descSetI"
+          "columnReference": "descSetID"
         }
       }]
     }
