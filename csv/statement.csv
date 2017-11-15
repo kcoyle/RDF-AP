@@ -1,1 +1,3 @@
-descRef,id,displayName,short description,long description,minOccurs,maxOccurs,valueType,rule
+stateID,descID,displayName,shortDescription,longDescription,minOccurs,maxOccurs,valueType
+s890,d345,"title","Title","Main title of the book, transcribed.",1,1,"literal"
+s899,d345,"author","Author","Author, editor or other main creator.",0,3,"IRI"
