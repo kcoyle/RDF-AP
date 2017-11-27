@@ -1,0 +1,90 @@
+@prefix : <http://kcoyle.net/metadata/examples/ontologies/2017/10/27/untitled-ontology-152#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://kcoyle.net/metadata/examples/ontologies/2017/10/27/untitled-ontology-152> .
+
+<http://kcoyle.net/metadata/examples/ontologies/2017/10/27/untitled-ontology-152> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://kcoyle.net/metadata/examples/ontologies/2017/10/27/untitled-ontology-152/description
+<http://kcoyle.net/metadata/examples/ontologies/2017/10/27/untitled-ontology-152/description> rdf:type owl:ObjectProperty ;
+                                                                                              rdfs:domain <http://kcoyle.net/metadata/examples/ontologies/2017/10/27/untitled-ontology-152/Desc> ;
+                                                                                              rdfs:range <http://kcoyle.net/metadata/examples/ontologies/2017/10/27/untitled-ontology-152/Statement> .
+
+
+###  http://kcoyle.net/metadata/examples/ontologies/2017/10/27/untitled-ontology-152/descriptionSet
+<http://kcoyle.net/metadata/examples/ontologies/2017/10/27/untitled-ontology-152/descriptionSet> rdf:type owl:ObjectProperty ;
+                                                                                                 rdfs:domain <http://kcoyle.net/metadata/examples/ontologies/2017/10/27/untitled-ontology-152/DescSet> ;
+                                                                                                 rdfs:range <http://kcoyle.net/metadata/examples/ontologies/2017/10/27/untitled-ontology-152/Desc> .
+
+
+###  http://kcoyle.net/metadata/examples/ontologies/2017/10/27/untitled-ontology-152/statement
+<http://kcoyle.net/metadata/examples/ontologies/2017/10/27/untitled-ontology-152/statement> rdf:type owl:ObjectProperty ;
+                                                                                            rdfs:domain <http://kcoyle.net/metadata/examples/ontologies/2017/10/27/untitled-ontology-152/Statement> ;
+                                                                                            rdfs:range <http://kcoyle.net/metadata/examples/ontologies/2017/10/27/untitled-ontology-152/SValue> .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://kcoyle.net/metadata/examples/ontologies/2017/10/27/untitled-ontology-152/dataTypeValue
+<http://kcoyle.net/metadata/examples/ontologies/2017/10/27/untitled-ontology-152/dataTypeValue> rdf:type owl:DatatypeProperty ;
+                                                                                                rdfs:domain <http://kcoyle.net/metadata/examples/ontologies/2017/10/27/untitled-ontology-152/DataTypeValue> ;
+                                                                                                rdfs:range rdfs:Literal .
+
+
+###  http://kcoyle.net/metadata/examples/ontologies/2017/10/27/untitled-ontology-152/literalValue
+<http://kcoyle.net/metadata/examples/ontologies/2017/10/27/untitled-ontology-152/literalValue> rdf:type owl:DatatypeProperty ;
+                                                                                               rdfs:domain <http://kcoyle.net/metadata/examples/ontologies/2017/10/27/untitled-ontology-152/LiteralValue> ;
+                                                                                               rdfs:range rdfs:Literal .
+
+
+###  http://kcoyle.net/metadata/examples/ontologies/2017/10/27/untitled-ontology-152/objectValue
+<http://kcoyle.net/metadata/examples/ontologies/2017/10/27/untitled-ontology-152/objectValue> rdf:type owl:DatatypeProperty ;
+                                                                                              rdfs:domain <http://kcoyle.net/metadata/examples/ontologies/2017/10/27/untitled-ontology-152/ObjectValue> ;
+                                                                                              rdfs:range xsd:anyURI .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://kcoyle.net/metadata/examples/ontologies/2017/10/27/untitled-ontology-152/DataTypeValue
+<http://kcoyle.net/metadata/examples/ontologies/2017/10/27/untitled-ontology-152/DataTypeValue> rdf:type owl:Class ;
+                                                                                                rdfs:subClassOf <http://kcoyle.net/metadata/examples/ontologies/2017/10/27/untitled-ontology-152/SValue> .
+
+
+###  http://kcoyle.net/metadata/examples/ontologies/2017/10/27/untitled-ontology-152/Desc
+<http://kcoyle.net/metadata/examples/ontologies/2017/10/27/untitled-ontology-152/Desc> rdf:type owl:Class .
+
+
+###  http://kcoyle.net/metadata/examples/ontologies/2017/10/27/untitled-ontology-152/DescSet
+<http://kcoyle.net/metadata/examples/ontologies/2017/10/27/untitled-ontology-152/DescSet> rdf:type owl:Class .
+
+
+###  http://kcoyle.net/metadata/examples/ontologies/2017/10/27/untitled-ontology-152/LiteralValue
+<http://kcoyle.net/metadata/examples/ontologies/2017/10/27/untitled-ontology-152/LiteralValue> rdf:type owl:Class ;
+                                                                                               rdfs:subClassOf <http://kcoyle.net/metadata/examples/ontologies/2017/10/27/untitled-ontology-152/SValue> .
+
+
+###  http://kcoyle.net/metadata/examples/ontologies/2017/10/27/untitled-ontology-152/ObjectValue
+<http://kcoyle.net/metadata/examples/ontologies/2017/10/27/untitled-ontology-152/ObjectValue> rdf:type owl:Class ;
+                                                                                              rdfs:subClassOf <http://kcoyle.net/metadata/examples/ontologies/2017/10/27/untitled-ontology-152/SValue> .
+
+
+###  http://kcoyle.net/metadata/examples/ontologies/2017/10/27/untitled-ontology-152/SValue
+<http://kcoyle.net/metadata/examples/ontologies/2017/10/27/untitled-ontology-152/SValue> rdf:type owl:Class .
+
+
+###  http://kcoyle.net/metadata/examples/ontologies/2017/10/27/untitled-ontology-152/Statement
+<http://kcoyle.net/metadata/examples/ontologies/2017/10/27/untitled-ontology-152/Statement> rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi
