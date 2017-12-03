@@ -8,43 +8,43 @@ descriptionSet,descSetID,"1,1",,xsd:IRI,,Schema
 ,rights,"0,-1",dct:rights,xsd:literal,,
 ,open/closed,"0,1",,,default open?,
 ,,,,,,
-description,descID,"1,1",,xsd:IRI,,Shape
+description,descID,"1,1",,xsd:IRI,,"Shape, tripleConstraint"
 ,display name,"1,-1",rdfs:label,xsd:literal,one value per language,
 ,short description,"0,1",,xsd:literal,,
 ,long description,"0,1",dct:description,xsd:literal,,
 ,standalone,"0,1",,"yes, no, either",“No” means the description can only be used if it is the object of a triple; yes & either seem to be equivalent,
 ,class,"0,-1",rdf:type,,The valid class(es) for this description,
-,,,,,,
-,,,,,,
+,min. occurrence,"0,1",sh:minInclusive,xsd:integer,Default 0,min:INTEGER
+,max. occurrence,"0,1",sh:maxInclusive,xsd:integer,Default -1,max:INTEGER
 Statement,statementID,"1,1",,xsd:iRI,,
 ,display name,"0,-1",rdfs:label,xsd:literal,one value per language,
 ,short description,"0,-1",,xsd:literal,,
 ,long description,"0,-1",dct:description,xsd:literal,,
-,min. occurrence,"0,1",sh:minInclusive,xsd:integer,Default 0,sh:minInclusive
-,max. occurrence,"0,1",sh:maxInclusive,xsd:integer,Default -1,sh:maxInclusive
+,min. occurrence,"0,1",sh:minInclusive,xsd:integer,Default 0,min:INTEGER
+,max. occurrence,"0,1",sh:maxInclusive,xsd:integer,Default -1,max:INTEGER
 ,,,,,,
-,,,,,,
-Datatype value,datatypeID,"1,1",,xsd:IRI,,
+,,,,,,NodeConstraint(s)
+Datatype value,datatypeID,"1,1",,xsd:IRI,,nonliteral
 ,display name,"0,-1",rdfs:label,literal or language literal,one value per language,
 ,short description,"0,-1",,xsd:literal,,
 ,long description,"0,-1",dct:description,xsd:literal,,
 ,Data type ,"1,1",,any xsd datatype,,
 ,datatype list,"0,1",,,"where more than one type is valid, e.g. date, datetime",
-,datatype value constraint,"0,1",,,"this needs to be a shex statement, e.g. <= today's date",
+,datatype value constraint,"0,1",,,"this needs to be a shex statement, e.g. <= today's date, or a regex?",value constraint
 ,,,,,,
 ,,,,,,
-Literal value,literal value ID,"1,1",,xsd:IRI,,
+Literal value,literal value ID,"1,1",,xsd:IRI,,literal
 ,display name,"0,-1",rdfs:label,xsd:literal,one value per language,
 ,short description,"0,-1",,xsd:literal,,
 ,long description,"0,-1",dct:description,xsd:literal,,
-,max length,"0,1",,,default unlimited,
-,min  length,"0,1",,,Default (?),
-,language tag constraint,"0,1",,,one or more language tags that are considered valid,
+,max length,"0,1",,,default unlimited,maxlength
+,min  length,"0,1",,,Default (?),minlength
+,language tag constraint,"0,1",,,one or more language tags that are considered valid,"LanguageStem, LanguageStemRange"
 ,unique language constraint,"0,1",,,only one occurrence of each language tag is allowed,
-,,,,,,
-Object value,object value ID,"1,1",,xsd:IRI,,
+,literal value list,"0,1",,xsd:literal,"“red”, “blue”, “green”",oneOf?
+Object value,object value ID,"1,1",,xsd:IRI,,iri
 ,display name,"0,-1",rdfs:label,xsd:literal,if language literal then one per language,
 ,short description,"0,-1",,xsd:literal,,
 ,long description,"0,-1",dct:description,xsd:literal,,
-,IRI list,"0,1",,xsd:IRI,a list of valid IRIs or IRI stems,
+,IRI list,"0,1",,xsd:IRI,a list of valid IRIs or IRI stems,"IRIStem,  or shapeExprLabel"
 ,object class constraint,,,xsd:IRI,must belong to this class or one of this list of classes,
