@@ -7,8 +7,8 @@ descriptionSet,descSetID,"1,1",,xsd:IRI,,Schema
 ,creator,"0,-1","dct:creator, dct:contributor",xsd:literal,,
 ,rights,"0,-1",dct:rights,xsd:literal,,
 ,open/closed,"0,1",,,default open?,
-,,,,,,
 description,descID,"1,1",,xsd:IRI,,"Shape, tripleConstraint"
+,descSetLink,"1,1",,xsd:iRI,Can a description link to more than one descSet?,
 ,display name,"1,-1",rdfs:label,xsd:literal,one value per language,
 ,short description,"0,1",,xsd:literal,,
 ,long description,"0,1",dct:description,xsd:literal,,
@@ -17,23 +17,22 @@ description,descID,"1,1",,xsd:IRI,,"Shape, tripleConstraint"
 ,min. occurrence,"0,1",sh:minInclusive,xsd:integer,Default 0,min:INTEGER
 ,max. occurrence,"0,1",sh:maxInclusive,xsd:integer,Default -1,max:INTEGER
 Statement,statementID,"1,1",,xsd:iRI,,
+,descriptionLink,"1,-1",,xsd:IRI,Assuming a statement can be reused within a set,
 ,display name,"0,-1",rdfs:label,xsd:literal,one value per language,
 ,short description,"0,-1",,xsd:literal,,
 ,long description,"0,-1",dct:description,xsd:literal,,
 ,min. occurrence,"0,1",sh:minInclusive,xsd:integer,Default 0,min:INTEGER
 ,max. occurrence,"0,1",sh:maxInclusive,xsd:integer,Default -1,max:INTEGER
-,,,,,,
-,,,,,,NodeConstraint(s)
 Datatype value,datatypeID,"1,1",,xsd:IRI,,nonliteral
+,statementLink,"1,-1",,xsd:IRI,can be reused in more than one statement?,
 ,display name,"0,-1",rdfs:label,literal or language literal,one value per language,
 ,short description,"0,-1",,xsd:literal,,
 ,long description,"0,-1",dct:description,xsd:literal,,
 ,Data type ,"1,1",,any xsd datatype,,
 ,datatype list,"0,1",,,"where more than one type is valid, e.g. date, datetime",
 ,datatype value constraint,"0,1",,,"this needs to be a shex statement, e.g. <= today's date, or a regex?",value constraint
-,,,,,,
-,,,,,,
 Literal value,literal value ID,"1,1",,xsd:IRI,,literal
+,statementLink,"1,-1",,xsd:IRI,,
 ,display name,"0,-1",rdfs:label,xsd:literal,one value per language,
 ,short description,"0,-1",,xsd:literal,,
 ,long description,"0,-1",dct:description,xsd:literal,,
@@ -43,6 +42,7 @@ Literal value,literal value ID,"1,1",,xsd:IRI,,literal
 ,unique language constraint,"0,1",,,only one occurrence of each language tag is allowed,
 ,literal value list,"0,1",,xsd:literal,"“red”, “blue”, “green”",oneOf?
 Object value,object value ID,"1,1",,xsd:IRI,,iri
+,statementLink,"1,-1",,xsd:IRI,,
 ,display name,"0,-1",rdfs:label,xsd:literal,if language literal then one per language,
 ,short description,"0,-1",,xsd:literal,,
 ,long description,"0,-1",dct:description,xsd:literal,,
