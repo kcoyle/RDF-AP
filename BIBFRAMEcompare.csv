@@ -1,0 +1,48 @@
+DCMI entity,element,,BIBFRAME entity,element
+descriptionSet,descSetID,,Profile,identifier
+,display name,,,title
+,version,,,description
+,version date,,,date
+,topic,,,contact
+,creator,,,remark
+,rights,,,resource templates
+,open/closed,,,
+,descriptions,,,
+description,descID,,Resource template,identifier
+,display name,,,resource identifier
+,short description,,,resource label
+,long description,,,contact
+,standalone,,,remark
+,class,,,property templates
+,min. occurrence,,,
+,max. occurrence,,,
+,statements,,,
+Statement,statementID,,Property,
+,display name,,,identifier
+,short description,,,property label
+,long description,,,mandatory
+,min. occurrence,,,repeatable
+,max. occurrence,,,type
+,value link,,,value constraint
+Datatype value,datatypeID,,,remark
+,display name,,,
+,short description,,Value constraint,language
+,long description,,,language URI
+,Data type ,,,language label
+,datatype list,,,dataType
+,datatype value constraint,,,value template reference
+Literal value,literal value ID,,,use values from
+,display name,,,editable
+,short description,,,remark
+,long description,,,
+,max length,,,
+,min  length,,,
+,language tag constraint,,,
+,unique language constraint,,,
+,literal value list,,,
+Object value,object value ID,,Value DataType,dataType ID
+,display name,,,dataType label
+,short description,,,dataType label hint
+,long description,,,remark
+,IRI list,,,
+,object class constraint,,,
