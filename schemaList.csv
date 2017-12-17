@@ -7,24 +7,24 @@ descriptionSet,descSetID,"1,1",,xsd:IRI,,Schema
 ,creator,"0,-1","dct:creator, dct:contributor",xsd:literal,,
 ,rights,"0,-1",dct:rights,xsd:literal,,
 ,open/closed,"0,1",,,default open?,
+,descriptions,"0,-1",array,xsd:IRI,,
 description,descID,"1,1",,xsd:IRI,,"Shape, tripleConstraint"
-,descSetLink,"1,1",,xsd:iRI,Can a description link to more than one descSet?,
 ,display name,"1,-1",rdfs:label,xsd:literal,one value per language,
 ,short description,"0,1",,xsd:literal,,
 ,long description,"0,1",dct:description,xsd:literal,,
-,standalone,"0,1",,"yes, no, either",‚ÄúNo‚Äù means the description can only be used if it is the object of a triple; yes & either seem to be equivalent,
+,standalone,"0,1",,"yes, no, either",â€œNoâ€ù means the description can only be used if it is the object of a triple; yes & either seem to be equivalent,
 ,class,"0,-1",rdf:type,,The valid class(es) for this description,
 ,min. occurrence,"0,1",sh:minInclusive,xsd:integer,Default 0,min:INTEGER
 ,max. occurrence,"0,1",sh:maxInclusive,xsd:integer,Default -1,max:INTEGER
+,statements,"0,-1",array,xsd:IRI,,
 Statement,statementID,"1,1",,xsd:iRI,,
-,descriptionLink,"1,-1",,xsd:IRI,Assuming a statement can be reused within a set,
 ,display name,"0,-1",rdfs:label,xsd:literal,one value per language,
 ,short description,"0,-1",,xsd:literal,,
 ,long description,"0,-1",dct:description,xsd:literal,,
 ,min. occurrence,"0,1",sh:minInclusive,xsd:integer,Default 0,min:INTEGER
 ,max. occurrence,"0,1",sh:maxInclusive,xsd:integer,Default -1,max:INTEGER
+,value link,"0,1",,xsd:IRI,Assuming a statement can be reused within a set,
 Datatype value,datatypeID,"1,1",,xsd:IRI,,nonliteral
-,statementLink,"1,-1",,xsd:IRI,can be reused in more than one statement?,
 ,display name,"0,-1",rdfs:label,literal or language literal,one value per language,
 ,short description,"0,-1",,xsd:literal,,
 ,long description,"0,-1",dct:description,xsd:literal,,
@@ -32,7 +32,6 @@ Datatype value,datatypeID,"1,1",,xsd:IRI,,nonliteral
 ,datatype list,"0,1",,,"where more than one type is valid, e.g. date, datetime",
 ,datatype value constraint,"0,1",,,"this needs to be a shex statement, e.g. <= today's date, or a regex?",value constraint
 Literal value,literal value ID,"1,1",,xsd:IRI,,literal
-,statementLink,"1,-1",,xsd:IRI,,
 ,display name,"0,-1",rdfs:label,xsd:literal,one value per language,
 ,short description,"0,-1",,xsd:literal,,
 ,long description,"0,-1",dct:description,xsd:literal,,
@@ -40,9 +39,8 @@ Literal value,literal value ID,"1,1",,xsd:IRI,,literal
 ,min  length,"0,1",,,Default (?),minlength
 ,language tag constraint,"0,1",,,one or more language tags that are considered valid,"LanguageStem, LanguageStemRange"
 ,unique language constraint,"0,1",,,only one occurrence of each language tag is allowed,
-,literal value list,"0,1",,xsd:literal,"‚Äúred‚Äù, ‚Äúblue‚Äù, ‚Äúgreen‚Äù",oneOf?
+,literal value list,"0,1",,xsd:literal,"â€œredâ€ù, â€œblueâ€ù, â€œgreenâ€ù",oneOf?
 Object value,object value ID,"1,1",,xsd:IRI,,iri
-,statementLink,"1,-1",,xsd:IRI,,
 ,display name,"0,-1",rdfs:label,xsd:literal,if language literal then one per language,
 ,short description,"0,-1",,xsd:literal,,
 ,long description,"0,-1",dct:description,xsd:literal,,
