@@ -6,43 +6,54 @@ descriptionSet,descSetID,"1,1",,xsd:IRI,,Schema
 ,topic,"0,-1",dct:subject,"xsd:literal, xsd:IRI",DCT says advised to take from a list.,
 ,creator,"0,-1","dct:creator, dct:contributor",xsd:literal,,
 ,rights,"0,-1",dct:rights,xsd:literal,,
-,open/closed,"0,1",,,default open?,
-,descriptions,"0,-1",array,xsd:IRI,,
+,open/closed,"0,1",sh:closed,xsd:boolean,default open?,
+,descriptions,"0,-1",,xsd:IRI (array),,
 description,descID,"1,1",,xsd:IRI,,"Shape, tripleConstraint"
 ,display name,"1,-1",rdfs:label,xsd:literal,one value per language,
-,short description,"0,1",,xsd:literal,,
-,long description,"0,1",dct:description,xsd:literal,,
-,standalone,"0,1",,"yes, no, either",â€œNoâ€ù means the description can only be used if it is the object of a triple; yes & either seem to be equivalent,
+,description,"0,1",dct:description,xsd:literal,,
+,usage note,"0,1",vann:usageNote,xsd:literal,,
+,standalone,"0,1",,"yes, no, either",No' means the description can only be used if it is the object of a triple; yes & either seem to be equivalent,
 ,class,"0,-1",rdf:type,,The valid class(es) for this description,
 ,min. occurrence,"0,1",sh:minInclusive,xsd:integer,Default 0,min:INTEGER
 ,max. occurrence,"0,1",sh:maxInclusive,xsd:integer,Default -1,max:INTEGER
-,statements,"0,-1",array,xsd:IRI,,
+,statements,"0,-1",,xsd:IRI (array),,
 Statement,statementID,"1,1",,xsd:iRI,,
 ,display name,"0,-1",rdfs:label,xsd:literal,one value per language,
-,short description,"0,-1",,xsd:literal,,
-,long description,"0,-1",dct:description,xsd:literal,,
+,description,"0,-1",dct:description,xsd:literal,,
+,usage note,"0,-1",vann:usageNote,xsd:literal,,
+,example,"0,-1",vann:example,,,
 ,min. occurrence,"0,1",sh:minInclusive,xsd:integer,Default 0,min:INTEGER
 ,max. occurrence,"0,1",sh:maxInclusive,xsd:integer,Default -1,max:INTEGER
 ,value link,"0,1",,xsd:IRI,Assuming a statement can be reused within a set,
 Datatype value,datatypeID,"1,1",,xsd:IRI,,nonliteral
 ,display name,"0,-1",rdfs:label,literal or language literal,one value per language,
-,short description,"0,-1",,xsd:literal,,
-,long description,"0,-1",dct:description,xsd:literal,,
-,Data type ,"1,1",,any xsd datatype,,
+,short description,"0,-1",dct:description,xsd:literal,,
+,usage note,"0,-1",vann:usageNote,xsd:literal,,
+,example,"0,-1",vann:example,,,
+,data type ,"1,1",,any xsd datatype,,
 ,datatype list,"0,1",,,"where more than one type is valid, e.g. date, datetime",
 ,datatype value constraint,"0,1",,,"this needs to be a shex statement, e.g. <= today's date, or a regex?",value constraint
 Literal value,literal value ID,"1,1",,xsd:IRI,,literal
 ,display name,"0,-1",rdfs:label,xsd:literal,one value per language,
-,short description,"0,-1",,xsd:literal,,
-,long description,"0,-1",dct:description,xsd:literal,,
+,short description,"0,-1",dct:description,xsd:literal,,
+,usage note,"0,-1",vann:usageNote,xsd:literal,,
+,example,"0,-1",vann:example,,,
 ,max length,"0,1",,,default unlimited,maxlength
 ,min  length,"0,1",,,Default (?),minlength
 ,language tag constraint,"0,1",,,one or more language tags that are considered valid,"LanguageStem, LanguageStemRange"
 ,unique language constraint,"0,1",,,only one occurrence of each language tag is allowed,
-,literal value list,"0,1",,xsd:literal,"â€œredâ€ù, â€œblueâ€ù, â€œgreenâ€ù",oneOf?
+,literal value list,"0,1",,xsd:literal,"Eg:red, blue, green",oneOf?
 Object value,object value ID,"1,1",,xsd:IRI,,iri
 ,display name,"0,-1",rdfs:label,xsd:literal,if language literal then one per language,
-,short description,"0,-1",,xsd:literal,,
-,long description,"0,-1",dct:description,xsd:literal,,
+,short description,"0,-1",dct:description,xsd:literal,,
+,usage note,"0,-1",vann:usageNote,xsd:literal,,
+,example,"0,-1",vann:example,,,
 ,IRI list,"0,1",,xsd:IRI,a list of valid IRIs or IRI stems,"IRIStem,  or shapeExprLabel"
 ,object class constraint,,,xsd:IRI,must belong to this class or one of this list of classes,
+,,,,,,
+,,,,,,
+namespaces,http://vocab.org/vann/,vann,,,,
+,http://purl.org/dc/terms/,dct,,,,
+,http://www.w3.org/ns/dcat,dcat,,,,
+,http://www.w3.org/2001/XMLSchema,xsd,,,,
+,http://www.w3.org/ns/shex,sh,,,,
