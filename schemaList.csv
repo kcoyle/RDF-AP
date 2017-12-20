@@ -11,6 +11,7 @@ descriptionSet,descSetID,"1,1",,xsd:IRI,,Schema
 description,descID,"1,1",,xsd:IRI,,"Shape, tripleConstraint"
 ,display name,"1,-1",rdfs:label,xsd:literal,one value per language,
 ,description,"0,1",dct:description,xsd:literal,,
+,example,"0,-1",vann:example,,,
 ,usage note,"0,1",vann:usageNote,xsd:literal,,
 ,standalone,"0,1",,"yes, no, either",No' means the description can only be used if it is the object of a triple; yes & either seem to be equivalent,
 ,class,"0,-1",rdf:type,,The valid class(es) for this description,
