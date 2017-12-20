@@ -11,7 +11,8 @@ descriptionSet,descSetID,,Profile,identifier
 description,descID,,Resource template,identifier
 ,display name,,,resource identifier
 ,short description,,,resource label
-,long description,,,contact
+,usage note,,,contact
+,example,,,
 ,standalone,,,remark
 ,class,,,property templates
 ,min. occurrence,,,
@@ -20,21 +21,24 @@ description,descID,,Resource template,identifier
 Statement,statementID,,Property,
 ,display name,,,identifier
 ,short description,,,property label
-,long description,,,mandatory
+,usage note,,,mandatory
+,example,,,
 ,min. occurrence,,,repeatable
 ,max. occurrence,,,type
 ,value link,,,value constraint
 Datatype value,datatypeID,,,remark
 ,display name,,,
 ,short description,,Value constraint,language
-,long description,,,language URI
+,usage note,,,language URI
+,example,,,
 ,Data type ,,,language label
 ,datatype list,,,dataType
 ,datatype value constraint,,,value template reference
 Literal value,literal value ID,,,use values from
 ,display name,,,editable
 ,short description,,,remark
-,long description,,,
+,usage note,,,
+,example,,,
 ,max length,,,
 ,min  length,,,
 ,language tag constraint,,,
@@ -43,6 +47,7 @@ Literal value,literal value ID,,,use values from
 Object value,object value ID,,Value DataType,dataType ID
 ,display name,,,dataType label
 ,short description,,,dataType label hint
-,long description,,,remark
+,usage note,,,remark
+,example,,,
 ,IRI list,,,
 ,object class constraint,,,
