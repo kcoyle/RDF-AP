@@ -1,53 +1,53 @@
-DCMI entity,element,,BIBFRAME entity,element
-descriptionSet,descSetID,,Profile,identifier
-,display name,,,title
-,version,,,description
-,version date,,,date
-,topic,,,contact
-,creator,,,remark
-,rights,,,resource templates
-,open/closed,,,
-,descriptions,,,
-description,descID,,Resource template,identifier
-,display name,,,resource identifier
-,short description,,,resource label
-,usage note,,,contact
-,example,,,
-,standalone,,,remark
-,class,,,property templates
-,min. occurrence,,,
-,max. occurrence,,,
-,statements,,,
-Statement,statementID,,Property,
-,display name,,,identifier
-,short description,,,property label
-,usage note,,,mandatory
-,example,,,
-,min. occurrence,,,repeatable
-,max. occurrence,,,type
-,value link,,,value constraint
-Datatype value,datatypeID,,,remark
-,display name,,,
-,short description,,Value constraint,language
-,usage note,,,language URI
-,example,,,
-,Data type ,,,language label
-,datatype list,,,dataType
-,datatype value constraint,,,value template reference
-Literal value,literal value ID,,,use values from
-,display name,,,editable
-,short description,,,remark
-,usage note,,,
-,example,,,
-,max length,,,
-,min  length,,,
-,language tag constraint,,,
-,unique language constraint,,,
-,literal value list,,,
-Object value,object value ID,,Value DataType,dataType ID
-,display name,,,dataType label
-,short description,,,dataType label hint
-,usage note,,,remark
-,example,,,
-,IRI list,,,
-,object class constraint,,,
+DCMI entity,element,,BIBFRAME entity,element,,DSP entity,element
+descriptionSet,descSetID,,Profile,identifier,,Description Set Template,
+,display name,,,title,,,
+,version,,,description,,,
+,version date,,,date,,,
+,topic,,,contact,,,
+,creator,,,remark,,,
+,rights,,,resource templates,,,
+,open/closed,,,,,,
+,descriptions,,,,,,
+description,descID,,Resource template,identifier,,Description Template,ID
+,display name,,,resource identifier,,,standalone
+,short description,,,resource label,,,minOccurs
+,usage note,,,contact,,,maxOccurs
+,example,,,,,,resource class
+,standalone,,,remark,,,
+,class,,,property templates,,,
+,min. occurrence,,,,,,
+,max. occurrence,,,,,,
+,statements,,,,,,
+Statement,statementID,,Property,,,Statement template,minOccurs
+,display name,,,identifier,,,maxOccurs
+,short description,,,property label,,,type
+,usage note,,,mandatory,,Property constraints,list
+,example,,,,,,Sub-property
+,min. occurrence,,,repeatable,,,
+,max. occurrence,,,type,,,
+,value link,,,value constraint,,,
+Datatype value,datatypeID,,,remark,,,
+,display name,,,,,,
+,short description,,Value constraint,language,,Literal value constraints,literal list
+,usage note,,,language URI,,,language (allowed)
+,example,,,,,,language list
+,Data type ,,,language label,,,syntax encoding scheme (SES)
+,datatype list,,,dataType,,,SES list
+,datatype value constraint,,,value template reference,,Non-literal constraints,desc. Template reference
+Literal value,literal value ID,,,use values from,,,class membership
+,display name,,,editable,,,value URI occurrence
+,short description,,,remark,,,value URI list
+,usage note,,,,,,vocab. Encoding scheme (allowed)
+,example,,,,,,vocab. Encoding scheme list
+,max length,,,,,,value string constraint
+,min  length,,,,,,minOccurs
+,language tag constraint,,,,,,maxOccurs
+,unique language constraint,,,,,,
+,literal value list,,,,,,
+Object value,object value ID,,Value DataType,dataType ID,,,
+,display name,,,dataType label,,,
+,short description,,,dataType label hint,,,
+,usage note,,,remark,,,
+,example,,,,,,
+,IRI list,,,,,,
+,object class constraint,,,,,,
