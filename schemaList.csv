@@ -37,7 +37,7 @@ Datatype value,datatypeID,"1,1",dct:identifier,xsd:literal,
 ,datatype value constraint,"0,1",sx:pattern,Grep-like string,"this needs to be a shex statement, e.g. <= today's date, or a regex?"
 Literal value,literal value ID,"1,1",dct:identifier,xsd:literal,
 ,display name,"0,-1",rdfs:label,xsd:literal,one value per language
-,short description,"0,-1",dct:description,xsd:literal,
+,description,"0,-1",dct:description,xsd:literal,
 ,usage note,"0,-1",vann:usageNote,xsd:literal,
 ,example,"0,-1",vann:example,,
 ,max length,"0,1",sx:maxLength,,default unlimited
@@ -47,7 +47,7 @@ Literal value,literal value ID,"1,1",dct:identifier,xsd:literal,
 ,literal value list,"0,1",,xsd:literal,"Eg:red, blue, green"
 Object value,object value ID,"1,1",dct:identifier,xsd:IRI,
 ,display name,"0,-1",rdfs:label,xsd:literal,if language literal then one per language
-,short description,"0,-1",dct:description,xsd:literal,
+,description,"0,-1",dct:description,xsd:literal,
 ,usage note,"0,-1",vann:usageNote,xsd:literal,
 ,example,"0,-1",vann:example,,
 ,IRI list,"0,1",,xsd:IRI,a list of valid IRIs or IRI stems
