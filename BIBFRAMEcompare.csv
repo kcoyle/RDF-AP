@@ -10,7 +10,7 @@ descriptionSet,descSetID,,Profile,identifier,,Description Set Template,
 ,descriptions,,,,,,
 description,descID,,Resource template,identifier,,Description Template,ID
 ,display name,,,resource identifier,,,standalone
-,short description,,,resource label,,,minOccurs
+,description,,,resource label,,,minOccurs
 ,usage note,,,contact,,,maxOccurs
 ,example,,,,,,resource class
 ,standalone,,,remark,,,
@@ -19,35 +19,36 @@ description,descID,,Resource template,identifier,,Description Template,ID
 ,max. occurrence,,,,,,
 ,statements,,,,,,
 Statement,statementID,,Property,,,Statement template,minOccurs
-,display name,,,identifier,,,maxOccurs
-,short description,,,property label,,,type
-,usage note,,,mandatory,,Property constraints,list
-,example,,,,,,Sub-property
-,min. occurrence,,,repeatable,,,
-,max. occurrence,,,type,,,
-,value link,,,value constraint,,,
-Datatype value,datatypeID,,,remark,,,
-,display name,,,,,,
-,short description,,Value constraint,language,,Literal value constraints,literal list
-,usage note,,,language URI,,,language (allowed)
-,example,,,,,,language list
-,Data type ,,,language label,,,syntax encoding scheme (SES)
-,datatype list,,,dataType,,,SES list
-,datatype value constraint,,,value template reference,,Non-literal constraints,desc. Template reference
-Literal value,literal value ID,,,use values from,,,class membership
-,display name,,,editable,,,value URI occurrence
-,short description,,,remark,,,value URI list
-,usage note,,,,,,vocab. Encoding scheme (allowed)
-,example,,,,,,vocab. Encoding scheme list
-,max length,,,,,,value string constraint
-,min  length,,,,,,minOccurs
-,language tag constraint,,,,,,maxOccurs
+,property,,,identifier,,,maxOccurs
+,display name,,,property label,,,type
+,description,,,mandatory,,Property constraints,list
+,usage note,,,,,,Sub-property
+,example,,,repeatable,,,
+,min. occurrence,,,type,,,
+,max. occurrence,,,value constraint,,,
+,value link,,,remark,,,
+Datatype value,datatypeID,,,,,,
+,display name,,Value constraint,language,,Literal value constraints,literal list
+,description,,,language URI,,,language (allowed)
+,usage note,,,,,,language list
+,example,,,language label,,,syntax encoding scheme (SES)
+,datatype ,,,dataType,,,SES list
+,datatype list,,,value template reference,,Non-literal constraints,desc. Template reference
+,datatype value constraint,,,use values from,,,class membership
+Literal value,literal value ID,,,editable,,,value URI occurrence
+,display name,,,remark,,,value URI list
+,description,,,,,,vocab. Encoding scheme (allowed)
+,usage note,,,,,,vocab. Encoding scheme list
+,example,,,,,,value string constraint
+,max length,,,,,,minOccurs
+,min  length,,,,,,maxOccurs
+,language tag constraint,,,,,,
 ,unique language constraint,,,,,,
-,literal value list,,,,,,
-Object value,object value ID,,Value DataType,dataType ID,,,
-,display name,,,dataType label,,,
-,short description,,,dataType label hint,,,
-,usage note,,,remark,,,
+,literal value list,,Value DataType,dataType ID,,,
+Object value,object value ID,,,dataType label,,,
+,display name,,,dataType label hint,,,
+,short description,,,remark,,,
+,usage note,,,,,,
 ,example,,,,,,
 ,IRI list,,,,,,
 ,object class constraint,,,,,,
