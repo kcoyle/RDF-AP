@@ -1,4 +1,4 @@
-# Requirments and motivation
+# Requirements and motivation for a DC-AP
 
 Why? Who? What? How? Why do we want to create profiles? Who needs them? What functions do they need to provide? How will they work?
 

@@ -43,7 +43,7 @@ Literal value,literal value ID,"1,1",dct:identifier,xsd:literal,
 ,max length,"0,1",sx:maxLength,,default unlimited
 ,min  length,"0,1",sx:minLength,,Default (?)
 ,language tag constraint,"0,1",,,one or more language tags that are considered valid
-,unique language constraint,"0,1",,ShEx issue #47,only one occurrence of each language tag is allowed
+,unique language constraint,"0,1",,ShEx issue #47 - may be available in the future,only one occurrence of each language tag is allowed
 ,literal value list,"0,1",,xsd:literal,"Eg:red, blue, green"
 Object value,object value ID,"1,1",dct:identifier,xsd:IRI,
 ,display name,"0,-1",rdfs:label,xsd:literal,if language literal then one per language
