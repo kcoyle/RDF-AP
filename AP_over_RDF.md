@@ -9,10 +9,12 @@ RDF is an abstract model that describes a simple unit, the triple. This simple u
 ## Structure v. semantics
 
 Both RDF and OWL express semantic relationships that were primarily introduced by the artificial intelligence community. Statements in the AI community are often of the type "A is a type of B" or "Because C, then A is a type of B". Semantics in this sense are logical axioms that can be expressed in graph form. The AI community is interested in being able to say things like:
-'''
-SubClassOf( 
-   :Grandfather 
-   ObjectIntersectionOf( :Man :Parent )
- )
- '''
+
+    SubClassOf( 
+      :Grandfather 
+      ObjectIntersectionOf( :Man :Parent )
+     )
+
+meaning "every Grandfather is both a man and a parent (whereas the converse is not necessarily true)" ([https://www.w3.org/TR/2012/REC-owl2-primer-20121211/ OWL2 Primer])
  
+Axioms of this type express knowledge about the world, meaning that they are part of the metadata for a very big universe, the universe of everything. The data that we often call "metadata" has a much more modest goal: metadata describes a carved-out area of knowledge, and often describes things for a particular purpose rather than emphasizing meaning. When you buy a home appliance, there are technical specifications that give relevant information like dimensions, color, and features.
