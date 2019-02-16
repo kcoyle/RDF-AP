@@ -11,6 +11,18 @@ This is ongoing work to modify the DC-Description Set Profile, taking into accou
 
 ## Background on project
 
+### Basic use cases
+* People need a simple way to describe their metadata terms for use and reuse
+* People need a simple way to convey their data model to others
+* There is a need for a way to define and communicate the "business rules" for their data; an extra plus is if those rules are or can be made actionable
+
+### Goals
+* Define a basic vocabulary (a core) for creating metadata application profiles including some basic constraints
+  * Extra: make this modular so units can be reused
+* Define formal validation rules for basic vocabulary
+  * Extra: create these as code, or that can be converted to code
+  * Extra: make these modular and reusable
+
 ### Files
 
 [Patterns](Patterns.md) proposes a basic list of design patterns used for metadata description and validation.
