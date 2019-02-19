@@ -1,4 +1,4 @@
 descID,label,shortDescription,longDescription,minOccur,maxOccur
 "d345","Book","Description of a book","The full bibliographic description of a book.",1,1
 "d346","Author","Information about the author","",0,-1
-
+"d347","Publisher","Publisher information","This identifies the publisher and can include a city or full address",0,1
