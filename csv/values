@@ -1,6 +1,6 @@
 valueId,IRI,VType,displayName,description,maxLen,minLen,usageNote,example,selectList,pattern
 bookTitle,dct:title,xs:string,Title,"title of the book",250,1,,"Moby Dick",,
-bookLanguage,dct:language,xs:string,Language,"language(s) of the book",64,2,,"eng,fre",,http://id.loc.gov/vocabulary/iso639-2*
+bookLanguage,dct:language,xs:string,Language,"language(s) of the book",64,2,,"eng, fre",,http://id.loc.gov/vocabulary/iso639-2*
 mediaType,dct:type,xs:anyURI,"Media type","the medium of the work",,,"uses one of the media types defined in Dublin Core as 'type'","text",,
 ISBN,schema:isbn,xs:string,ISBN,"the ISBN of the book",20,10,,"9781250066206",,
 pubDate,dct:date,xs:gYear,Publication date,the year of publication or copyright that is on the piece,4,4,,"2006",,
