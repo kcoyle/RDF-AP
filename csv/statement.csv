@@ -1,4 +1,11 @@
-stateID,displayName,shortDescription,longDescription,minOccurs,maxOccurs
-s890,"Title","Main title of the book, transcribed.",,1,1
-s899,"Author","Author, editor or other main creator.",,0,3
-s900,"Publisher","Publisher of the resource",,0,1
+stmtID,displayName,shortDescription,longDescription,minOccurs,maxOccurs
+bookTitle,"Title","Main title of the book, transcribed.",,1,1
+bookLanguage,"Language","One or more languages of the text",,1,1
+mediaType,"Media Type","One of the DC type values",,1,3
+ISBN,"ISBN","ISBN of the book",,0,2
+pubDate,"Publication date","Usually the year of publication of copyright",,0,1
+AUName,"Author","name of the author or creator",,0,3
+AUBirth,"Birth date","birth date (usually year) if known",,0,1
+AUDeath,"Death date","death date (usually year) if known",,0,1
+publisher,"Publisher","name of publisher of the resource",,0,1
+placeOfPub,"Place of publication","Usually a city name",,0,1
