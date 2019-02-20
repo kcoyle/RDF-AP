@@ -1,4 +1,4 @@
-descID,valueId,IRI,VType,displayName,description,maxLen,minLen,usageNote,example,selectList,pattern
+descID,stmtId,IRI,VType,displayName,description,maxLen,minLen,usageNote,example,selectList,pattern
 d345,bookTitle,dct:title,xs:string,Title,title of the book,250,1,,Moby Dick,,
 d345,bookLanguage,dct:language,xs:string,Language,language(s) of the book,64,2,,"eng,fre",,http://id.loc.gov/vocabulary/iso639-2*
 d345,mediaType,dct:type,xs:anyURI,Media type,the medium of the work,,,uses one of the media types defined in Dublin Core as 'type',text,,
