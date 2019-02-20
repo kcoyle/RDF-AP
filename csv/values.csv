@@ -1,0 +1,11 @@
+valueId,IRI,VType,displayName,description,maxLen,minLen,usageNote,example,selectList,pattern
+bookTitle,dct:title,xs:string,Title,"title of the book",250,1,,"Moby Dick",,
+bookLanguage,dct:language,xs:string,Language,"language(s) of the book",64,2,,"eng, fre",,http://id.loc.gov/vocabulary/iso639-2*
+mediaType,dct:type,xs:anyURI,"Media type","the medium of the work",,,"uses one of the media types defined in Dublin Core as 'type'","text",,
+ISBN,schema:isbn,xs:string,ISBN,"the ISBN of the book",20,10,,"9781250066206",,
+pubDate,dct:date,xs:gYear,Publication date,the year of publication or copyright that is on the piece,4,4,,"2006",,
+AUName,foaf:name,xs:string,Author name,"the name of the author",100,2,"the name of the author as shown on the piece.","J.K. Rowling",,
+AUBirth,bio:birth,xs:dateTime,Birth date,"The birth date of the author",20,4,include as much of the author's birth date as is available,"19190512",,
+AUDeath,bio:death,xs:dateTime,Death date,"the death date of the author",20,4,include as much of the author's death date as is available,"20030923",,
+publisher,schema:publisher,xs:string,Publisher,"the name of the publisher",60,2,,,,
+placeOfPub,schema:city,xs:string,Place of publication,"the place of publication",60,2,"the city or cities of publication listed on the item","London, New York",,
