@@ -25,13 +25,19 @@ This is ongoing work to modify the DC-Description Set Profile, taking into accou
 
 ### Files
 
-[Patterns](Patterns.md) proposes a basic list of design patterns used for metadata description and validation.
-
 [Requirements](requirements.md) is a list of requirements.
 
 [Use cases](Use_cases.md) is a gathering of use cases relevant to the task.
 
+[Start of a vocabulary schema](schemaList.csv) that is loosely based on the [DCMI Description Set Profile](http://dublincore.org/documents/dc-dsp/)
+
+[Comparison](BIBFRAMEcompare.csv) with BIBFRAME profiles, and others
+
+[Patterns](Patterns.md) proposes a basic list of design patterns used for metadata description and validation.
+
 [Description Set Profile - 2](DSPedited.md) is a re-writing of the DSP document.
+
+A [directory](https://github.com/kcoyle/RDF-AP/tree/master/csv) with some attempts at creating CSV files for a simple profile.
 
 ### Summary
 
