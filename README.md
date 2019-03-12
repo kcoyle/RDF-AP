@@ -1,4 +1,5 @@
 # RDF-AP
+(possibly a future [VOWEL - web vocabulary language](https://kcoyle.blogspot.com/2019/03/id-like-to-buy-vowel.html))
 
 This is ongoing work to modify the DC-Description Set Profile, taking into account the vocabularies of ShEx and SHACL.
 
