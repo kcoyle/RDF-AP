@@ -1,0 +1,9 @@
+Entity,Entity_label,Property,Property_label,Mand,Repeat,ValueType,Value,Annotation,Prefix,Namespace
+book,Book,rdf:type,,,,IRI,sco:Book,,,
+,,dct:creator,Author,y,y,entity,#NAME?,Author is not required; no limit on the number,dct,http://purl.org/dc/terms/
+,,dct:title,Title,y,n,literal,xsd:string,Each book must have a title,dct,http://purl.org/dc/terms/
+,,dct:date,Year of publication,y,n,literal,xsd:year,"Only the year, 9999",dct,http://purl.org/dc/terms/
+person,Person,rdf:type,,,,IRI,sco:Person,,,
+,,foaf:Name,Name,y,n,literal,,Each person has one name,foaf,http://xmlns.com/foaf/spec/
+,,foaf:mbox,Email,n,y,IRI,,Email is optional but only one allowed,foaf,http://xmlns.com/foaf/spec/
+,,dct:date,Birth year, n,y,literal,xsd:year,"Only the year, 9999",dct,http://purl.org/dc/terms/
