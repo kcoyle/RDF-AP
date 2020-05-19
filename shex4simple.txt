@@ -10,7 +10,7 @@ start = @<Profile>
 }
 
 <PropertyShape> {                   # A Property has:
- :Property_name IRI ;  #   an identifier, IRI or string
+ :Property_name IRI LITERAL;  #   an identifier, IRI or literal
  :Property_label xsd:string* ; # an optional label
  :Mandatory  ["y" "n"] ; 
  :Repeatable ["y" "n"] ;
